@@ -13,6 +13,7 @@
     <div class="container">
       <main>
         <form
+          id="form"
           action="#"
           method="get"
           class="row mt-4 needs-validation"
@@ -22,6 +23,7 @@
             <h1 class="mb-3">Registro</h1>
             <hr class="my-4" />
             <div class="row g-3">
+              <!-- Datos genéricos -->
               <div class="col-sm-6">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" required />
@@ -56,6 +58,7 @@
                 </div>
               </div>
 
+              <!-- Contraseñas -->
               <div class="col-sm-6">
                 <label for="password1" class="form-label">Contraseña</label>
                 <input
@@ -68,7 +71,9 @@
                 <div class="valid-feedback">
                   Sad and boring, but it works ¯\_(ツ)_/¯
                 </div>
-                <div class="invalid-feedback">Mala contraseña</div>
+                <div class="invalid-feedback">
+                  Debe ingresar una contraseña de al menos 6 caracteres
+                </div>
               </div>
 
               <div class="col-sm-6">
@@ -83,9 +88,10 @@
                   required
                 />
                 <div class="valid-feedback">Acceptable</div>
-                <div class="invalid-feedback">Mala contraseña</div>
+                <div class="invalid-feedback">Debe ser igual a a con</div>
               </div>
 
+              <!-- Terminos y servicios -->
               <div class="col-sm-12">
                 <button
                   id="buttonTerminosServicio"
@@ -97,7 +103,7 @@
                   Términos del servicio
                 </button>
                 <div class="valid-feedback">Acceptable</div>
-                <div class="invalid-feedback">
+                <div id="validationServer05Feedback" class="invalid-feedback">
                   Share with me your most formal and stylish email address
                 </div>
               </div>
@@ -106,6 +112,7 @@
             </div>
           </div>
 
+          <!-- Pop up de terminos y condiciones -->
           <div
             class="modal fade"
             id="modalTerminos"
@@ -139,6 +146,7 @@
                       type="checkbox"
                       class="form-check-input"
                       id="terminos"
+                      aria-describedby="validationServer05Feedback"
                       required
                     />
                     <label class="form-check-label" for="terminos"

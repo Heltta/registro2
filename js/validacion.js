@@ -10,8 +10,8 @@ const campos = {
 
 function checkPassword() {
   if (campos.password1.value !== campos.password2.value) {
-    campos.password1.setCustomValidity('Las contraseña es incorrecta');
-    campos.password2.setCustomValidity('Las contraseña es incorrecta');
+    campos.password1.setCustomValidity('La contraseña es incorrecta');
+    campos.password2.setCustomValidity('La contraseña es incorrecta');
   } else {
     campos.password1.setCustomValidity('');
     campos.password2.setCustomValidity('');
@@ -44,3 +44,15 @@ campos.password2.addEventListener('input', checkPassword);
     );
   });
 })();
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   let formulario = document.getElementById('form');
+
+//   formulario.addEventListener('submit', function (_event) {
+//     if (!campos.terminos.checked) {
+//       campos.terminos.setCustomValidity('Debes aceptar los terminos');
+//     } else {
+//       campos.terminos.setCustomValidity('');
+//     }
+//   });
+// });
